@@ -2,7 +2,7 @@ import React from "react";
 
 function ProductCard({ image, title, price, rating }) {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col m-2">
             <div>
                 {image}
             </div>

@@ -1,12 +1,9 @@
 import React from "react";
 
-function Products({ var1, var2 }) {
+function Products() {
     return (
-        <div>
-            {var1}
-            <br />
-            {var2}
-        </div>
+        <>
+        </>
     )
 }
 

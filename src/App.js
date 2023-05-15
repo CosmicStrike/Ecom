@@ -23,8 +23,8 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Main var1={var1} var2={var2} />} />
-                <Route path='/product' element={<Products var1={var1} var2={var2} />} />
+                <Route path='/' element={<Main />} />
+                <Route path='/product' element={<Products />} />
                 <Route path='*' element={<div className='text-2xl m-4'>Page not Found</div>} />
             </Routes>
         </BrowserRouter>
