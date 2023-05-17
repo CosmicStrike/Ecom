@@ -4,7 +4,7 @@ function ProductCard({ image, title, price, rating }) {
     return (
         <div className="flex flex-col m-2">
             <div>
-                {image}
+                <img src={image} alt={title} />
             </div>
             <div>
                 <p>{title}</p>

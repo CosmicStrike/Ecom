@@ -9,13 +9,18 @@ function FilterBy({ by, name, searchName, search }) {
     })
 
     // Wrapper: It wraps all the filtered list with HTML
-    const By = filtered.map((b) => <div><input type='checkbox' name={name} value={b} /><label htmlFor={name}>{b}</label></div>)
+    let i = 0;
+    const By = filtered.map((b) => {
+        i += 1;
+        return <div key={i}><input type='checkbox' name={name} value={b} /><label htmlFor={name}>{b}</label></div>
+    })
 
     return (
         <div className="my-2">
             <p>{name}</p>
             <input type="text" placeholder="Search" name={searchName} value={search[0]} onChange={(e) => { search[1](e.target.value) }} />
-            {By}
+            <div className="overflow-auto h-[10rem]">{By}</div>
+
         </div>
     )
 }
