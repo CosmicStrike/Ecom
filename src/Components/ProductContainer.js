@@ -25,7 +25,7 @@ function ProductContainer({ products, searchProducts, brands, categories }) {
     const ProductCards = filteredProducts.map((prod) => <ProductCard key={prod.id} image={prod.images[0]} title={prod.title} rating={prod.rating} price={prod.price} />)
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
             {(ProductCards.length) ? ProductCards : <h1>No Product matches the filters</h1>}
         </div>
     )
