@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Main from './Pages/Main'
 import Products from './Pages/Products'
 import Loading from './Pages/Loading'
@@ -31,7 +31,7 @@ function App() {
     const [products, setProducts] = useState([])
     const [brands, setBrands] = useState([])
     const [categories, setCategories] = useState([])
-    // const navigate = useNavigate();
+
     useEffect(() => {
         GetData().then((e) => {
             let p, b, c;
