@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function ProductCard({ image, title, price, rating }) {
     return (
@@ -7,7 +8,7 @@ function ProductCard({ image, title, price, rating }) {
                 <img className="aspect-square" src={image} alt={title} />
             </div>
             <div>
-                <p>{title}</p>
+                <Link to={`/${title.replace(' ', '-')}`}>{title}</Link>
                 <p>{rating}</p>
             </div>
             <div>
