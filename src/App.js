@@ -46,6 +46,10 @@ function App() {
         Render the below route only if products are arrived from server, else render last route
         Because react will render the screen even if fetch api is still ongoing, so we have to check of fetch api has compleleted it's task or not
     */
+    if (products === null) return <div className="w-1/2  h-[12rem] flex justify-center items-center mx-auto my-[15rem]">
+        <p className="w-fit h-fit text-4xl">Issuse in connecting to Internet</p>
+    </div>
+
     if (!products.length) return <Loading />
     else
         return (
