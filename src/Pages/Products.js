@@ -36,6 +36,9 @@ function Products() {
                         }}>
                             navigate_before
                         </button>
+                        <div>
+                            {imageNumber + 1}/{product.images.length}
+                        </div>
                         <button className="material-symbols-outlined  rounded-full w-14 bg-gray-200" onClick={() => {
                             setImageNumber(Math.abs(imageNumber + 1) % product.images.length);
 
