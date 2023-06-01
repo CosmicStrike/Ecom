@@ -31,7 +31,7 @@ function Products() {
                     <img className="w-full h-full p-4 aspect-square" src={product.images[imageNumber]} alt={`${product.title}`} />
                     <div className="w-11/12 h-10 shadow-sm rounded-full  flex flex-row justify-between">
                         <button className="material-symbols-outlined rounded-full w-14 bg-gray-200" onClick={() => {
-                            setImageNumber(Math.abs(imageNumber - 1) % product.images.length);
+                            setImageNumber(((imageNumber - 1) < 0 ? (product.images.length - 1) : (imageNumber - 1)) % product.images.length);
 
                         }}>
                             navigate_before

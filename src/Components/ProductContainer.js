@@ -22,10 +22,10 @@ function ProductContainer({ products, searchProducts, brands, categories }) {
     })
 
     // Creates the card for all filtered products and store it in array which will be get displayed 
-    const ProductCards = filteredProducts.map((prod) => <ProductCard key={prod.id} image={prod.images[0]} title={prod.title} rating={prod.rating} price={prod.price} />)
+    const ProductCards = filteredProducts.map((prod) => <ProductCard key={prod.id} image={prod.images[0]} title={prod.title} rating={prod.rating} price={prod.price} description={prod.description} />)
 
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-row flex-wrap w-full">
             {(ProductCards.length) ? ProductCards : <h1>No Product matches the filters</h1>}
         </div>
     )

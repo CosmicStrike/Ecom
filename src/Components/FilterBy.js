@@ -10,7 +10,7 @@ function FilterBy({ by, name, searchName, search, intermediateUpdate }) {
 
     // Wrapper: It wraps all the filtered list with HTML
     const By = filtered.map((b) => {
-        return <div key={b}><input type='checkbox' name={name} value={b}
+        return <div key={b}><input className="mx-2 w-4 h-4" type='checkbox' name={name} value={b}
             defaultChecked={(intermediateUpdate[0].indexOf(b) === (-1)) ? false : true}// tick the check box if the item is in filtered list
             onClick={
                 () => {
@@ -19,14 +19,14 @@ function FilterBy({ by, name, searchName, search, intermediateUpdate }) {
                     else // If already present in filtered list then remove it
                         intermediateUpdate[0].splice(intermediateUpdate[0].indexOf(b), 1);
                 }
-            } /><label htmlFor={name} >{b}</label></div>
+            } /><label className="text-lg" htmlFor={name} >{b}</label></div>
     })
 
     return (
-        <div className="my-2">
-            <p>{name}</p>
-            <input type="text" placeholder="Search" name={searchName} value={search[0]} onChange={(e) => { search[1](e.target.value) }} />
-            <div className="overflow-auto h-[10rem]">{By}</div>
+        <div className="my-6">
+            <p className="font-bold text-lg">{name}</p>
+            <input className="mx-2 w-full bg-gray-50 outline-none rounded-sm p-1" type="text" placeholder="Search" name={searchName} value={search[0]} onChange={(e) => { search[1](e.target.value) }} />
+            <div className=" w-full align-middle overflow-auto h-[11rem] shadow-md p-1 bg-gray-100  ml-2">{By}</div>
         </div>
     )
 }
