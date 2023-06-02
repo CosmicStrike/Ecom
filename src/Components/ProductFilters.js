@@ -22,11 +22,11 @@ function ProductFilter({ setSearchProducts, brands, categories }) {
 
 
     return (
-        <form className='flex flex-col w-[24rem] h-fit shadow-lg m-2 p-4' onSubmit={handleSubmit}>
+        <form className='flex flex-col w-[24rem] h-fit bg-gray-50 rounded-lg shadow-lg m-2 p-4' onSubmit={handleSubmit}>
 
             {/* Search the product by title/name */}
             <label className='font-bold self-start text-lg ' htmlFor="searchProduct">Products</label>
-            <input className='mx-2 w-full bg-gray-50 shadow-md outline-none rounded-sm p-1' type="text" placeholder="Search" name="searchProduct" id="searchProduct" />
+            <input className='mx-2 w-full bg-white shadow-md outline-none rounded-sm p-1' type="text" placeholder="Search" name="searchProduct" id="searchProduct" />
 
             {/* Search the product by Brand name */}
             <FilterBy by={brands[0]} name={"Brands"} searchName={"searchBrands"} search={[searchBrands, setSearchBrands]} intermediateUpdate={[iBrands, setIBrands]} />

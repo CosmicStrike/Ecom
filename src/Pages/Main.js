@@ -7,10 +7,16 @@ function Main({ products, brands, categories }) {
     const [Brands, setBrands] = useState([]); // This will store only those brands which user wants to see, filtered ones
     const [Categories, setCategories] = useState([]);// This will store only those categories which user wants to see, 
 
+
     return (
-        <div className="flex flex-row">
-            <ProductFilter brands={[brands, setBrands]} categories={[categories, setCategories]} setSearchProducts={setSearchProducts} />
-            <ProductContainer products={products} brands={Brands} categories={Categories} searchProducts={searchProducts} />
+        <div className=" bg-slate-100">
+            <div className="w-full h-[5rem] bg-slate-200 mb-2 text-center">
+                <p className="text-6xl mx-2 font-bold font-serif text-slate-600">E-Shop</p>
+            </div>
+            <div className="flex flex-row">
+                <ProductFilter brands={[brands, setBrands]} categories={[categories, setCategories]} setSearchProducts={setSearchProducts} />
+                <ProductContainer products={products} brands={Brands} categories={Categories} searchProducts={searchProducts} />
+            </div>
         </div>
     )
 }

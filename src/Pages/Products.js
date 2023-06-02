@@ -27,40 +27,44 @@ function Products() {
                 <div className="w-full h-10 bg-slate-100 m-1"></div>
             </div>
             <div className="flex flex-row m-2 justify-center">
-                <div className="w-2/5 flex flex-col items-center">
-                    <img className="w-full h-full p-4 aspect-square" src={product.images[imageNumber]} alt={`${product.title}`} />
-                    <div className="w-11/12 h-10 shadow-sm rounded-full  flex flex-row justify-between">
-                        <button className="material-symbols-outlined rounded-full w-14 bg-gray-200" onClick={() => {
+                <div className="w-2/5 h-[46rem] flex flex-col items-center justify-start">
+                    <div className="w-11/12 h-10 shadow-md rounded-sm bg-neutral-50 flex flex-row justify-between items-center">
+                        <button className="material-symbols-outlined rounded-xl w-10 m-2 h-8 bg-neutral-200 " onClick={() => {
                             setImageNumber(((imageNumber - 1) < 0 ? (product.images.length - 1) : (imageNumber - 1)) % product.images.length);
 
                         }}>
                             navigate_before
                         </button>
-                        <div>
+                        <div className="font-bold text-lg">
                             {imageNumber + 1}/{product.images.length}
                         </div>
-                        <button className="material-symbols-outlined  rounded-full w-14 bg-gray-200" onClick={() => {
+                        <button className="material-symbols-outlined rounded-xl w-10 m-2 h-8 bg-neutral-200" onClick={() => {
                             setImageNumber(Math.abs(imageNumber + 1) % product.images.length);
 
                         }}>
                             navigate_next
                         </button>
                     </div>
+                    <img className="max-h-[44rem] p-4 aspect-auto" src={product.images[imageNumber]} alt={`${product.title}`} />
+
                 </div>
-                <div className="w-3/5 flex flex-col justify-around bg-gray-100">
-                    <div className="text-5xl mb-2">
+                <div className="w-3/5 h-full flex flex-col justify-evenly bg-neutral-50 p-8 rounded-md shadow-md">
+                    <div className="text-5xl m-4 font-semibold">
                         {product.title}
 
-                        <div className="text-lg">
+                        <div className="text-lg font-normal">
                             Rating: {product.rating}
                         </div>
                     </div>
-                    <div className="text-4xl bg-white">
-                        Price: Rs.{product.price}
+                    <div className="text-4xl m-4">
+                        Rs.{product.price}
                     </div>
-                    <div>
+                    <div className="text-lg m-4">
                         Description:<br /> {product.description}
                     </div>
+                    <button className="self-start m-4 font-bold bg-violet-500 rounded-sm text-white text-lg w-36 p-2">
+                        Add to Cart
+                    </button>
                 </div>
             </div>
 
