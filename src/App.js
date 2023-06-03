@@ -24,7 +24,7 @@ const GetData = async () => {
 
         return [products, brands, categories];// array structuring
     }
-    catch (err) { console.log(err); return [null, null, null] }
+    catch (err) { return [null, null, null]; }
 }
 
 function App() {

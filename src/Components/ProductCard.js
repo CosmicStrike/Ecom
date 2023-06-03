@@ -5,7 +5,7 @@ function ProductCard({ image, title, price, rating, description }) {
     const location = useLocation();
 
     return (
-        <div className="flex flex-col w-[32rem] m-2 rounded-lg mb-6 shadow-lg bg-neutral-100">
+        <div className="flex flex-col w-[32rem] h-fit m-2 rounded-lg mb-6 shadow-lg bg-neutral-100">
             <div className="w-[32rem] h-[24rem] flex flex-row justify-center bg-white">
                 <img className="w-auto h-full p-2" src={image} alt={title} />
             </div>

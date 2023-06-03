@@ -8,7 +8,6 @@ function Products() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    console.log(product)
     if (product === null) {
         return (
             <div className="w-1/2 h-[24rem] flex flex-col justify-center items-center rounded-md shadow-lg text-center mx-auto my-10 bg-gray-100">

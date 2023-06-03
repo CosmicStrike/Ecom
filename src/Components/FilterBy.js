@@ -25,8 +25,8 @@ function FilterBy({ by, name, searchName, search, intermediateUpdate }) {
     return (
         <div className="my-6">
             <p className="font-bold text-lg">{name}</p>
-            <input className="mx-2 w-full bg-white outline-none rounded-sm p-1" type="text" placeholder="Search" name={searchName} value={search[0]} onChange={(e) => { search[1](e.target.value) }} />
-            <div className=" w-full align-middle overflow-auto h-[11rem] shadow-md p-1 bg-gray-100  ml-2">{By}</div>
+            <input className="mx-2 w-[18rem] bg-white outline-none rounded-sm p-2" type="text" placeholder="Search" name={searchName} value={search[0]} onChange={(e) => { search[1](e.target.value) }} />
+            <div className=" w-[18rem] shadow-md align-middle overflow-auto h-[11rem] p-1 bg-gray-100  ml-2">{By}</div>
         </div>
     )
 }
