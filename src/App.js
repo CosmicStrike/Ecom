@@ -11,14 +11,15 @@ const GetData = async () => {
     let products = []
     let categories = []
     try {
+        // Fetch the products 
         const response = await fetch('https://dummyjson.com/products');
         if (response.ok) {
             const data = await response.json()
             products = data['products']
             products.forEach((prod) => {
-                prod.title = prod['title'].replaceAll('-', ' ');
-                if (brands.indexOf(prod['brand']) === (-1)) brands.push(prod['brand'])
-                if (categories.indexOf(prod['category']) === (-1)) categories.push(prod['category'])
+                prod.title = prod['title'].replaceAll('-', ' ');// Replace all '-' by white space
+                if (brands.indexOf(prod['brand']) === (-1)) brands.push(prod['brand'])// Extract Brands 
+                if (categories.indexOf(prod['category']) === (-1)) categories.push(prod['category'])// Extract Categories
             })
         }
 
@@ -54,12 +55,12 @@ function App() {
     else
         return (
             <RouterProvider router={createBrowserRouter([
-                {
+                {// Main page route, displays filters and products
                     path: '/',
                     element: <Main products={products} categories={categories} brands={brands} />
                 },
 
-                {
+                {// Product Description page route, it takes the product from here(App.js) and send it to Product.js Page
                     path: '/:product',
                     element: <Products />,
                     loader: ({ params }) => {
@@ -71,7 +72,7 @@ function App() {
                     }
                 },
 
-                {
+                {// For 404
                     path: '/*',
                     element: <PageNotFound />
                 }

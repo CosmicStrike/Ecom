@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import ProductNotFound from '../Public/Images/product-not-found.jpg';
 function Products() {
-    // const navigate = useNavigate();
-    const [imageNumber, setImageNumber] = useState(0);
-    const product = useLoaderData();
-    const location = useLocation();
-    const navigate = useNavigate();
 
-    if (product === null) {
+    const [imageNumber, setImageNumber] = useState(0);// Stores current image index 
+
+    const product = useLoaderData();// Loads the product passed from route
+
+    const location = useLocation();// Gives current url
+
+    const navigate = useNavigate();// To navigate back to main page
+
+    if (product === null) {// If no product title matches the url then display product not found page
         return (
             <div className="w-1/2 h-[24rem] flex flex-col justify-center items-center rounded-md shadow-lg text-center mx-auto my-10 bg-gray-100">
                 <div className="shadow-lg"><img className="aspect-square" src={ProductNotFound} alt="Product nots found" /></div>
@@ -16,6 +19,7 @@ function Products() {
             </div>
         );
     }
+    
     return (
 
         <div className="flex flex-col">

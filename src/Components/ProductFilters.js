@@ -9,13 +9,13 @@ function ProductFilter({ setSearchProducts, brands, categories, setPrice }) {
     const [iBrands, setIBrands] = useState(localStorage.getItem('brandSelected') === null ? [] : localStorage.getItem('brandSelected').split(',')); // Intermediate Brand filters, applied on button click
     const [iCategories, setICategories] = useState(localStorage.getItem('categorySelected') === null ? [] : localStorage.getItem('categorySelected').split(',')); // Intermediate Categories filters, applied on button click
 
-    // On Form Submit, All filters are applied
+    // On Form Submit, All filters will get applied
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const form = new FormData(e.target);
         brands[1](iBrands);// Gets the selected checkboxes for Brand and change the state
-        localStorage.setItem('brandSearch', searchBrands);
+        localStorage.setItem('brandSearch', searchBrands);// Remember the filters
         if (iBrands.length > 0) localStorage.setItem('brandSelected', (iBrands));
 
         categories[1](iCategories);// Gets the selected checkboxes for Categories and change the state
