@@ -17,10 +17,12 @@ function ProductFilter({ setSearchProducts, brands, categories, setPrice }) {
         brands[1](iBrands);// Gets the selected checkboxes for Brand and change the state
         localStorage.setItem('brandSearch', searchBrands);// Remember the filters
         if (iBrands.length > 0) localStorage.setItem('brandSelected', (iBrands));
+        else localStorage.removeItem('brandSelected');
 
         categories[1](iCategories);// Gets the selected checkboxes for Categories and change the state
         localStorage.setItem('categorySearch', searchCategories);
         if (iCategories.length > 0) localStorage.setItem('categorySelected', (iCategories));
+        else localStorage.removeItem('categorySelected');
 
         setSearchProducts(form.get('searchProduct')); // Gets the product title which user enteres in search bar
         localStorage.setItem('productSearch', form.get('searchProduct'));
